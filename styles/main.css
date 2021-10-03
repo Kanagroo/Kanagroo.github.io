@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap');
+@font-face {
+  font-family: 'Pixelig Cursief';
+  src: url("../fonts/Pixelig Cursief.ttf");
+}
+
+:root {
+  --blue: #2a2a57;
+  --darkblue: #23234a;
+  --darkerblue: #1a1a36;
+  --light-on-dark: #eceff1;
+  --dark-on-light: #212121;
+}
+
+body {
+  margin: 0;
+  background-color: var(--blue);
+  font-family: 'Lato', sans-serif;
+}
+
