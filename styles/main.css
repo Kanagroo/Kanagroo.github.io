@@ -12,6 +12,11 @@
   --dark-on-light: #212121;
 }
 
+::selection {
+  background: var(--darkerblue);
+  color: var(--blue);
+}
+
 body {
   margin: 0;
   background-color: var(--blue);

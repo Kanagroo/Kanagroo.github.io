@@ -6,18 +6,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/pcard.css">
   <title>Kanagrou - Github</title>
 </head>
 <body>
   <div id="main-container">
     <div id="content-wrapper">
       <div><h1 class="main-title">Kanagrou</h1></div>
-      <!-- <div><h1>Projects</h1></div> -->
+      <div><h2>Projects</h2></div>
+      <div id="projects-container">
+      </div>
     </div>
 
     <footer id="footer">
       <div id="footer-wrapper"><a href="https://github.com/Kanagroo">Github</a></div>
     </footer>
   </div>
+
+  <template id="pcard-template">
+    <div>
+    <a style="text-decoration: none;">
+    <div class="pcard">  
+      <div class="pcard-title-container"><span class="pcard-title"></span></div>
+      <div class="pcard-desc-container"><span class="pcard-desc"></span></div>
+      <div class="pcard-stars-container"><span class="pcard-stars"></span></div>   
+    </div>
+  </a>
+  </div>
+  </template>
+
+  <script type="text/javascript">
+    const card_template = document.querySelector('#pcard-template');
+    const cards_container = document.querySelector('#projects-container');
+
+    function create_card(repo, template) {
+      const card = template.content.cloneNode(true);
+      const cardTitle = card.querySelector('.pcard-title');
+      const cardDesc = card.querySelector('.pcard-desc');
+      const cardStars = card.querySelector('.pcard-stars');
+      const cardLinkWrapper = card.querySelector('a');
+      cardTitle.textContent = repo.name;
+      cardDesc.textContent = repo.description;
+      cardLinkWrapper.href = repo.svn_url;
+      cards_container.appendChild(card);
+
+    }
+
+    fetch("https://api.github.com/users/kanagroo/repos")
+      .then(r => r.json())
+      .then(d => d.forEach(repo => create_card(repo, card_template)));
+  </script>
 </body>
+
 </html>

@@ -9,7 +9,7 @@ div#content-wrapper {
   align-items: center;
   justify-content: center;
 
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
 }
 
 #footer {
@@ -32,6 +32,15 @@ div#content-wrapper {
   color: var(--darkerblue);
 }
 
+#projects-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0 5rem;
+}
+
 h1.main-title {
   padding-bottom: 1rem;
 
@@ -42,4 +51,27 @@ h1.main-title {
 
   filter: drop-shadow(.5rem .5rem 0 var(--darkblue));
   border-bottom: .5rem solid var(--darkblue);
+}
+h2 {
+  padding-bottom: .5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  color: #111129;
+}
+
+
+@media screen and (max-width: 631px){
+  h1.main-title {
+    padding-bottom: 0.75rem;
+    font-size: 5rem;
+  }
+}
+@media screen and (max-width: 470px){
+  h1.main-title {
+    padding-bottom: 0.25rem;
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
 }
