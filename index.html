@@ -52,7 +52,7 @@
 
     }
 
-    fetch("https://api.github.com/users/kanagroo/repos")
+    fetch("https://api.github.com/users/kanagrou/repos")
       .then(r => r.json())
       .then(d => d.forEach(repo => create_card(repo, card_template)));
   </script>
